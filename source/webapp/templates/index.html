@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div>
+    <form method="POST">
+        {% csrf_token %}
+    <label>First Number:</label><br/>
+    <input type="number" name="first_number" required/><br/>
+
+    <label>Second number:</label><br/>
+    <input type="number" name="second_number" required><br/>
+
+    <input type="radio" id="add" name="math_action" value="add">
+    <label for="add">add</label><br>
+    <input type="radio" id="subtract" name="math_action" value="subtract">
+    <label for="subtract">subtract</label><br>
+    <input type="radio" id="multiply" name="math_action" value="multiply">
+    <label for="multiply">multiply</label><br>
+    <input type="radio" id="divide" name="math_action" value="divide">
+    <label for="divide">divide</label><br>
+
+    <input type="submit" value="Calculate"/>
+    </form>
+    </div>
+{{ Result }}
+</body>
+</html>
